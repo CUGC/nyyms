@@ -5,3 +5,8 @@
 require File.expand_path('../config/application', __FILE__)
 
 Nyyms::Application.load_tasks
+
+desc "Deploy code to MediaTemple (ve) server"
+task :deploy do
+  system 'ssh root@ve.cq6pq2r5.vesrv.com "cd /var/www/nyyms; git pull origin master"'
+end
