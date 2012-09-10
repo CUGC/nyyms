@@ -1,0 +1,57 @@
+<%= form_for(@nyym) do |f| %>
+  <% if @nyym.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nyym.errors.count, "error") %> prohibited this nyym from being saved:</h2>
+
+      <ul>
+      <% @nyym.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :school %><br />
+    <%= f.text_field :school %>
+  </div>
+  <div class="field">
+    <%= f.label :teacher_name %><br />
+    <%= f.text_field :teacher_name %>
+  </div>
+  <div class="field">
+    <%= f.label :teacher_email %><br />
+    <%= f.text_field :teacher_email %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_part %><br />
+    <%= f.text_field :voice_part %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :has_paid %><br />
+    <%= f.check_box :has_paid %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_received_on %><br />
+    <%= f.date_select :payment_received_on %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
