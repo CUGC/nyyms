@@ -24,19 +24,23 @@
     <%= f.number_field :age %>
   </div>
   <div class="field">
-    <%= f.label :school %><br />
-    <%= f.text_field :school %>
+    <%= f.label :school_name %><br />
+    <%= f.text_field :school_name %>
   </div>
   <div class="field">
-    <%= f.label :teacher_name %><br />
+    <%= f.label :school_address, "School Mailing Address" %><br />
+    <%= f.text_field :school_address %>
+  </div>
+  <div class="field">
+    <%= f.label :teacher_name, "Teacher's Name" %><br />
     <%= f.text_field :teacher_name %>
   </div>
   <div class="field">
-    <%= f.label :teacher_email %><br />
+    <%= f.label :teacher_email, "Teacher's Email" %><br />
     <%= f.text_field :teacher_email %>
   </div>
   <div class="field">
-    <%= f.label :voice_part %><br />
+    <%= f.label :voice_part, "Voice Part" %><br />
     <%= f.text_field :voice_part %>
   </div>
   <div class="field">
