@@ -8,5 +8,5 @@ Nyyms::Application.load_tasks
 
 desc "Deploy code to MediaTemple (ve) server"
 task :deploy do
-  system 'ssh root@ve.cq6pq2r5.vesrv.com "cd /var/www/nyyms; git pull origin master"'
+  system 'ssh root@ve.cq6pq2r5.vesrv.com "cd /var/www/nyyms; git pull origin master; bundle install"'
 end
