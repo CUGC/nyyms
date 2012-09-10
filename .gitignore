@@ -16,3 +16,5 @@
 
 config/database.yml
 config/gmail_smtp_webmaster.yml
+
+.DS_Store
