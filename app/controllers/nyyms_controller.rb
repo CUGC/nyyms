@@ -44,6 +44,9 @@ class NyymsController < ApplicationController
 
     respond_to do |format|
       if @nyym.save
+        
+        NyymMailer.send_signup_confirmations(@nyym)
+        
         format.html { redirect_to @nyym, :notice => 'Nyym was successfully created.' }
         format.json { render :json => @nyym, :status => :created, :location => @nyym }
       else
