@@ -2,10 +2,10 @@ class NyymMailer < ActionMailer::Base
   default :from => "webmaster@gleeclub.cornell.edu"
 
   def send_signup_confirmations(nyym)
-    signup_confirmation_to_attendee(nyym).deliver
-    signup_confirmation_to_teacher(nyym).deliver
-    signup_confirmation_to_librarian(nyym).deliver
-    signup_confirmation_to_nyyms_coordinator(nyym).deliver
+    NyymMailer.signup_confirmation_to_attendee(nyym).deliver
+    NyymMailer.signup_confirmation_to_teacher(nyym).deliver
+    NyymMailer.signup_confirmation_to_librarian(nyym).deliver
+    NyymMailer.signup_confirmation_to_nyyms_coordinator(nyym).deliver
   end
 
   def signup_confirmation_to_attendee(nyym)

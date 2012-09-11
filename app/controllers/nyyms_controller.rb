@@ -47,7 +47,7 @@ class NyymsController < ApplicationController
         
         NyymMailer.send_signup_confirmations(@nyym)
         
-        format.html { redirect_to new_nyyms_path, :notice => 'Successfully registered.' }
+        format.html { redirect_to new_nyym_path, :notice => 'Successfully registered.' }
         format.json { render :json => @nyym, :status => :created, :location => @nyym }
       else
         format.html { render :action => "new" }
