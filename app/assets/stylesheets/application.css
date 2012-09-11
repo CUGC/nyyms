@@ -18,6 +18,11 @@
 }
 
 form#new_nyym {
+    textarea {
+       background: none;
+       height: auto;
+       width: auto; 
+    }
     input[type="submit"]{
         font-size: 16px;
         text-transform: none;
