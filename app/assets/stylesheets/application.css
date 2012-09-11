@@ -20,7 +20,8 @@
 form#new_nyym {
     textarea {
        background: none;
-       height: auto;
+       height: 200px !important;
+       max-height: 200px !important;
        width: auto; 
     }
     input[type="submit"]{
