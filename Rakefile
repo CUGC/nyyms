@@ -13,5 +13,7 @@ end
 
 desc "Precompiles assets on remote server."
 task :precomp do
-  system 'ssh root@ve.cq6pq2r5.vesrv.com "cd /var/www/nyyms; /usr/local/rvm/rubies/ruby-1.9.3-p194/bin/ruby /usr/local/rvm/gems/ruby-1.9.3-p194@global/bin/rake assets:precompile:all RAILS_ENV=production RAILS_GROUPS=assets;"'
+  puts "Can't do that automatically, sorry.\nTry sshing onto the server and executing the following command:"
+  puts
+  puts "/usr/local/rvm/rubies/ruby-1.9.3-p194/bin/ruby /usr/local/rvm/gems/ruby-1.9.3-p194@global/bin/rake assets:precompile:all RAILS_ENV=production RAILS_GROUPS=assets;"
 end
