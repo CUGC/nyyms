@@ -8,5 +8,10 @@ Nyyms::Application.load_tasks
 
 desc "Deploy code to MediaTemple (ve) server"
 task :deploy do
-  system 'ssh root@ve.cq6pq2r5.vesrv.com "cd /var/www/nyyms; git pull origin master; bundle install; touch tmp/restart.txt"'
+  system 'ssh root@ve.cq6pq2r5.vesrv.com "cd /var/www/nyyms; git pull origin master; touch tmp/restart.txt;"'
+end
+
+desc "Precompiles assets on remote server."
+task :precomp do
+  system 'ssh root@ve.cq6pq2r5.vesrv.com "cd /var/www/nyyms; rake assets:precompile RAILS_ENV=production;"'
 end
