@@ -1,14 +1,304 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Nyyms</title>
+  <title>NYYMS &mdash; Cornell University Glee Club</title>
+  <link rel="icon" type="image/vnd.microsoft.icon" href="http://gleeclub.com/files/all/favicon.png" />
+  <link rel="stylesheet" type="text/css" href="http://gleeclub.com/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="http://gleeclub.com/css/suckerfish.css" />
+  <link rel="stylesheet" type="text/css" href="http://gleeclub.com/css/colorbox.css" />
+  <link rel="stylesheet" type="text/css" href="http://gleeclub.com/css/webtree/webkit.css" media="screen" />
+  <script type="text/javascript" src="http://gleeclub.com/js/jquery.min.js"></script>
+  <script type="text/javascript" src="http://gleeclub.com/js/jquery.cycle.min.js"></script>
+  <script type="text/javascript" src="http://gleeclub.com/js/jquery.colorbox.js"></script>
+  <script type="text/javascript" src="http://gleeclub.com/js/main.js"></script>
+  <script type="text/javascript" src="http://gleeclub.com/js/cufon-yui.js"></script>
+  <script type="text/javascript" src="http://gleeclub.com/js/cufon-config.js"></script>
+  <script type="text/javascript" src="http://gleeclub.com/js/fonts/avenir.roman.js"></script>
+  <script type="text/javascript" src="http://gleeclub.com/js/fonts/avenir.medium.js"></script>
+  <!--[if IE]><link rel="stylesheet" type="text/css" href="http://gleeclub.com/css/webtree/ie.css" /><![endif]-->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+
+
+        <div class="fades" id="fade-l"></div>
+        <div class="fades" id="fade-r"></div>
+        <div id="wrapper">
+            <div id="header_links" class="wrapper">
+                <a href="http://www.cornell.edu/" target="_blank" id="cornell_link" name="cornell_link"></a> <a href="http://www.cornell.edu/search" target="_blank" id="cornell_search" name="cornell_search">Search Cornell</a>
+            </div>
+            <div id="header"></div>
+            <div id="nav" class="clearfix">
+                <div class="wrapper">
+                    <div id="crumbs">
+                        <a href="http://gleeclub.com/"></a> <a href="http://gleeclub.com/about.html">About</a> <span>Interested in Joining the Glee Club?</span>
+                    </div>
+                    <div id="actions">
+                        <ul>
+                            <li>
+                                <a href="/tickets.html" class="avenir-roman" id="action_tickets" name="action_tickets"></a>
+                                <div class="hover-left-shadow"></div>
+                                <div class="hover-right-shadow"></div>
+                                <div class="hover-bottom-left-shadow"></div>
+                                <div class="hover-bottom-right-shadow"></div>
+                                <div class="hover-bottom-shadow"></div><img src="http://gleeclub.com/img/theme/icon-tickets-active.png" alt="">Buy Tickets
+                                <div class="hover-foot"></div>
+                            </li>
+                            <li>
+                                <a href="/concert-schedule.html" class="avenir-roman" id="action_performance" name="action_performance"></a>
+                                <div class="hover-left-shadow"></div>
+                                <div class="hover-right-shadow"></div>
+                                <div class="hover-bottom-left-shadow"></div>
+                                <div class="hover-bottom-right-shadow"></div>
+                                <div class="hover-bottom-shadow"></div><img src="http://gleeclub.com/img/theme/icon-performance-active.png" alt="">See a Performance
+                                <div class="hover-foot"></div>
+                            </li>
+                            <li>
+                                <a href="/support.html" class="avenir-roman" id="action_support" name="action_support"></a>
+                                <div class="hover-left-shadow"></div>
+                                <div class="hover-right-shadow"></div>
+                                <div class="hover-bottom-left-shadow"></div>
+                                <div class="hover-bottom-right-shadow"></div>
+                                <div class="hover-bottom-shadow"></div><img src="http://gleeclub.com/img/theme/icon-support-active.png" alt="">Support the Club
+                                <div class="hover-foot"></div>
+                            </li>
+                            <li id="membersonly">
+                                <span id="openlogin"></span>
+                                <div id="memberslogin">
+                                    <div id="closelogin"></div>
+                                    <form id="loginform" action="http://gleeclub.com/login_protected" method="post" name="loginform">
+                                        <p class="hidden">
+                                            <input type="hidden" value="POST" name="_method">
+                                        </p>
+                                        <p>
+                                            <input name="data[Content][username]" type="text" class="text long" value="username" title="username" id="ContentUsername">
+                                        </p>
+                                        <p class="submit-line">
+                                            <input name="data[Content][password]" type="password" class="text short" value="password" title="password" id="ContentPassword">
+                                        </p><a href="#" class="submit avenir-medium">Log In</a>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="logo-edge" id="logo_left"></div>
+                    <div id="logo">
+                        <a href="/"></a>
+                    </div>
+                    <div class="logo-edge" id="logo_right"></div>
+                    <ul id="nav_left" class="clearfix">
+                        <li class="hasSubNav active">
+                            <ul>
+                                <li class="first">
+                                    <a href="http://gleeclub.com/auditions.html">Auditions</a>
+                                </li>
+                                <li>
+                                    <a href="http://gleeclub.com/meet-the-director.html">Meet the Director</a>
+                                </li>
+                                <li>
+                                    <a href="http://gleeclub.com/officers.html">Glee Club Officers</a>
+                                </li>
+                                <li>
+                                    <a href="http://gleeclub.com/hangovers.html">The Hangovers</a>
+                                </li>
+                                <li>
+                                    <a href="http://gleeclub.com/members">Member Directory</a>
+                                </li>
+                                <li>
+                                    <a href="http://gleeclub.com/history.html">History</a>
+                                </li>
+                                <li>
+                                    <a href="http://gleeclub.com/past-directors.html">Past Directors</a>
+                                </li>
+                                <li class="last">
+                                    <a href="http://gleeclub.com/commissioning.html">Commissioning</a>
+                                </li>
+                            </ul><a href="http://gleeclub.com/about.html" id="cat-menu-item-1" class="firstItem active avenir-roman" name="cat-menu-item-1">About</a>
+                        </li>
+                        <li class="hasSubNav">
+                            <ul>
+                                <li class="first">
+                                    <a href="http://gleeclub.com/homecoming.html">Homecoming Concert</a>
+                                </li>
+                                <li>
+                                    <a href="http://gleeclub.com/concert-schedule.html">Concert Schedule</a>
+                                </li>
+                                <li>
+                                    <a href="http://gleeclub.com/repertoire.html">Repertoire</a>
+                                </li>
+                                <li>
+                                    <a href="http://gleeclub.com/southeast.html">Southeast Tour 2013</a>
+                                </li>
+                                <li class="last">
+                                    <a href="http://gleeclub.com/california-tour-2011-recap.html">Past Tours</a>
+                                </li>
+                            </ul><a href="http://gleeclub.com/concerts.html" id="cat-menu-item-2" class="avenir-roman" name="cat-menu-item-2">Concerts &amp; Events</a>
+                        </li>
+                        <li class="hasSubNav third">
+                            <ul>
+                                <li class="first">
+                                    <a href="http://gleeclub.com/tickets.html">Buy Tickets</a>
+                                </li>
+                                <li>
+                                    <a href="http://gleeclub.com/content/view/concert-schedule.html">See a Performance</a>
+                                </li>
+                                <li class="last">
+                                    <a href="http://gleeclub.com/video.html">Media</a>
+                                </li>
+                            </ul><a href="http://gleeclub.com/experience.html" id="cat-menu-item-3" class="lastItem avenir-roman" name="cat-menu-item-3">Experience</a>
+                        </li>
+                    </ul>
+                    <ul id="nav_right" class="clearfix">
+                        <li class="hasSubNav">
+                            <ul>
+                                <li class="last first">
+                                    <a href="http://gleeclub.com/store.html">Online Store</a>
+                                </li>
+                            </ul><a href="http://gleeclub.com/store.html" id="cat-menu-item-4" class="firstItem avenir-roman" name="cat-menu-item-4">Online Store</a>
+                        </li>
+                        <li class="hasSubNav">
+                            <ul>
+                                <li class="first">
+                                    <a href="http://gleeclub.com/news/latest-news.html">Latest News</a>
+                                </li>
+                                <li class="last">
+                                    <a href="http://gleeclub.com/news/press-releases.html">In the Press</a>
+                                </li>
+                            </ul><a href="http://gleeclub.com/news" id="cat-menu-item-5" class="avenir-roman" name="cat-menu-item-5">Latest News</a>
+                        </li>
+                        <li class="hasSubNav">
+                            <ul>
+                                <li class="last first">
+                                    <a href="http://gleeclub.com/by-telephone.html">By Telephone &amp; Mail</a>
+                                </li>
+                            </ul><a href="http://gleeclub.com/pages/contact" id="cat-menu-item-6" class="lastItem avenir-roman" name="cat-menu-item-6">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="content">
+                <div class="wrapper">
+                    <div id="page">
+                        <div id="breadcrumbs">
+                            <div id="banner-shadow"></div>
+                        </div>
+                        <div id="breadcrumb_footer"></div>
+                        <div id="pagetitle">
+                            <h1>
+                                Interested in Joining the Glee Club?
+                            </h1>
+                        </div>
+                        <hr>
+                        <div id="sidebar">
+                            <div id="musicplayer">
+                                <a href="http://gleeclub.com/player/player.php"></a>
+                            </div>
+                            <div class="sidebox" id="section">
+                                <div class="sidebox-head"></div>
+                                <div class="sidebox-body">
+                                    <div class="side-title avenir-roman">
+                                        In This Section
+                                    </div>
+                                    <ul id="relatedSectionLinks">
+                                        <li class="first current-page">
+                                            <a href="http://gleeclub.com/auditions.html">Auditions</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://gleeclub.com/meet-the-director.html">Meet the Director&nbsp;›</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://gleeclub.com/officers.html">Glee Club Officers&nbsp;›</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://gleeclub.com/hangovers.html">The Hangovers&nbsp;›</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://gleeclub.com/members">Member Directory&nbsp;›</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://gleeclub.com/history.html">History&nbsp;›</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://gleeclub.com/past-directors.html">Past Directors&nbsp;›</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://gleeclub.com/commissioning.html">Commissioning&nbsp;›</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="sidebox-foot"></div>
+                            </div>
+                        </div>
+                        <div id="pagecontent">
+                            <div id="content-head"></div>
+                            <div class="content view">
+                                <%= yield %>
+                            </div>
+                            <div id="content-foot"></div>
+                        </div>
+                    </div>
+                    <div id="lowernav">
+                        <hr>
+                        <div id="footernav" class="clearfix">
+                            <ul class="clearfix">
+                                <li class="">
+                                    <a href="http://gleeclub.com/about.html" id="cat-menu-item-1" class="firstItem active avenir-medium" name="cat-menu-item-1">About</a>
+                                </li>
+                                <li class="">
+                                    <a href="http://gleeclub.com/concerts.html" id="cat-menu-item-2" class="avenir-medium" name="cat-menu-item-2">Concerts &amp; Events</a>
+                                </li>
+                                <li class=" third">
+                                    <a href="http://gleeclub.com/experience.html" id="cat-menu-item-3" class="lastItem avenir-medium" name="cat-menu-item-3">Experience</a>
+                                </li>
+                                <li class="">
+                                    <a href="http://gleeclub.com/store.html" id="cat-menu-item-4" class="firstItem avenir-medium" name="cat-menu-item-4">Online Store</a>
+                                </li>
+                                <li class="">
+                                    <a href="http://gleeclub.com/news" id="cat-menu-item-5" class="avenir-medium" name="cat-menu-item-5">Latest News</a>
+                                </li>
+                                <li class="">
+                                    <a href="http://gleeclub.com/pages/contact" id="cat-menu-item-6" class="lastItem avenir-medium" name="cat-menu-item-6">Contact</a>
+                                </li>
+                            </ul>
+                            <div id="identity">
+                                <ul>
+                                    <li>
+                                        <span class="avenir-medium">Cornell University Glee Club</span>
+                                    </li>
+                                    <li>
+                                        <span class="avenir-medium">Day Hall Mailroom, Cornell University</span>
+                                    </li>
+                                    <li>
+                                        <span class="avenir-medium">Ithaca, NY 14853</span>
+                                    </li>
+                                    <li>
+                                        <span class="avenir-medium">gleeclub@cornell.edu</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .wrapper -->
+            </div><!-- #content -->
+            <div id="pusher"></div>
+        </div><!-- #wrapper -->
+        <div id="footer">
+            <div id="credits">
+                <div class="wrapper">
+                    <div class="avenir-roman" id="copyright">
+                        Copyright &copy;2012, Cornell University Glee Club. All Rights Reserved.
+                    </div>
+                    <div class="avenir-roman" id="awp">
+                        . Site By <a href="http://www.parkermoore.de" title="" target="_blank">Parker Moore</a>.
+                    </div>
+                </div>
+            </div>
+        </div><script type="text/javascript">
+Cufon.now();
+        </script>
 
 </body>
 </html>
