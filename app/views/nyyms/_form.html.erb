@@ -16,6 +16,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :voice_part, "Voice Part" %><br />
+    <%= f.select :voice_part, Nyym.voice_parts, :prompt => true %>
+  </div>
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
@@ -42,10 +46,6 @@
   <div class="field">
     <%= f.label :teacher_email, "Teacher's Email" %><br />
     <%= f.text_field :teacher_email %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_part, "Voice Part" %><br />
-    <%= f.select :voice_part, Nyym.voice_parts, :prompt => true %>
   </div>
   <div class="field">
     <%= f.label :has_paid %><br />

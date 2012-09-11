@@ -1,5 +1,56 @@
-<h1>New nyym</h1>
+<%= form_for(@nyym) do |f| %>
+  <% if @nyym.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nyym.errors.count, "error") %> prohibited this nyym from being saved:</h2>
 
-<%= render 'form' %>
+      <ul>
+      <% @nyym.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_part, "Voice Part" %><br />
+    <%= f.select :voice_part, Nyym.voice_parts, :prompt => true %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number, :placeholder => "Optional" %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :school_name %><br />
+    <%= f.text_field :school_name %>
+  </div>
+  <div class="field">
+    <%= f.label :school_address, "School Mailing Address" %><br />
+    <%= f.text_field :school_address %>
+  </div>
+  <div class="field">
+    <%= f.label :teacher_name, "Teacher's Name" %><br />
+    <%= f.text_field :teacher_name %>
+  </div>
+  <div class="field">
+    <%= f.label :teacher_email, "Teacher's Email" %><br />
+    <%= f.text_field :teacher_email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Back', nyyms_path %>
