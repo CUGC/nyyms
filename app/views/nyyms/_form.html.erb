@@ -20,6 +20,10 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number, :placeholder => "Optional" %>
+  </div>
+  <div class="field">
     <%= f.label :age %><br />
     <%= f.number_field :age %>
   </div>
@@ -41,11 +45,7 @@
   </div>
   <div class="field">
     <%= f.label :voice_part, "Voice Part" %><br />
-    <%= f.text_field :voice_part %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number %><br />
-    <%= f.text_field :phone_number %>
+    <%= f.select :voice_part, Nyym.voice_parts, :prompt => true %>
   </div>
   <div class="field">
     <%= f.label :has_paid %><br />
