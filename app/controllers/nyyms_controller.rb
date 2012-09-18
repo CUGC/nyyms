@@ -45,9 +45,9 @@ class NyymsController < ApplicationController
     respond_to do |format|
       if @nyym.save
         
-        NyymMailer.send_signup_confirmations(@nyym)
+        NyymMailer.send_signup_confirmations_for_independent_signup(@nyym)
         
-        format.html { redirect_to root_path, :notice => 'Successfully registered. Check your email!' }
+        format.html { redirect_to root_path, :notice => 'Successfully registered. Email confirmations have been sent.' }
         format.json { render :json => @nyym, :status => :created, :location => @nyym }
       else
         format.html { render :action => "new" }
