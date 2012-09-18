@@ -20,8 +20,8 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :student_name_1 %><br />
-    <%= f.text_field :student_name_1 %>
+    <%= f.label :students_names %><br />
+    <%= f.text_field :students_names %>
   </div>
   <div class="field">
     <%= f.label :school_name %><br />
@@ -32,6 +32,6 @@
     <%= f.text_field :school_address %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Register", :class => "btn btn-success btn-large btn-block" %>
   </div>
 <% end %>

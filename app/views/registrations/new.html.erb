@@ -1,5 +1,39 @@
-<h1>New registration</h1>
+<p>(Or, you can <%= link_to "register as an independent attendee", independent_registration_path %>)</p>
 
-<%= render 'form' %>
+<%= form_for(@registration) do |f| %>
+  <% if @registration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
 
-<%= link_to 'Back', registrations_path %>
+      <ul>
+      <% @registration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :students_names %><br />
+    <%= f.text_field :students_names %>
+  </div>
+  <div class="field">
+    <%= f.label :school_name %><br />
+    <%= f.text_field :school_name %>
+  </div>
+  <div class="field">
+    <%= f.label :school_address %><br />
+    <%= f.text_field :school_address %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Register", :class => "btn btn-success btn-large btn-block" %>
+  </div>
+<% end %>
