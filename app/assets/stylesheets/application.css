@@ -17,7 +17,7 @@
     float: none;
 }
 
-form#new_nyym {
+form#new_nyym, form#new_registration {
     textarea {
        background: none;
        height: 200px !important;
