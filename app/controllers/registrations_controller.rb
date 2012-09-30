@@ -41,9 +41,9 @@ class RegistrationsController < ApplicationController
   # POST /registrations.json
   def create
     @registration = Registration.new(params[:registration])
-    students_names = @registration.students_names
+    students_names = Marshal.load(Marshal.dump(@registration.students_names))
     @registration.students_names = @registration.students_names.join("\n")
-    students_voice_parts = @registration.students_voice_parts
+    students_voice_parts = Marshal.load(Marshal.dump(@registration.students_voice_parts))
     @registration.students_voice_parts = @registration.students_voice_parts.join("\n")
     
     respond_to do |format|
@@ -58,7 +58,6 @@ class RegistrationsController < ApplicationController
           @nyym.teacher_email = @registration.email
           @nyym.school_name = @registration.school_name
           @nyym.school_address = @registration.school_address
-          logger.info(@nyym)
           @nyym.save
           @nyyms << @nyym
         end
