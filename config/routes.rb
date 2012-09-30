@@ -3,6 +3,7 @@ Nyyms::Application.routes.draw do
   match 'registrations' => 'registrations#create', :via => [:post]
   match 'independent_registration' => 'nyyms#new', :via => [:get]
   match 'nyyms' => 'nyyms#create', :via => [:post]
+  match 'mp3s' => 'nyyms#mp3s', :via => [:get]
 
   root :to => 'registrations#new'
 end

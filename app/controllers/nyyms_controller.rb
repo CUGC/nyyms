@@ -83,4 +83,8 @@ class NyymsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # GET /mp3s
+  def mp3s
+  end
 end
