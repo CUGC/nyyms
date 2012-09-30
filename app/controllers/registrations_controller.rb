@@ -41,26 +41,31 @@ class RegistrationsController < ApplicationController
   # POST /registrations.json
   def create
     @registration = Registration.new(params[:registration])
-    @registration.students_names.gsub! /(\r?\n)|\r/, $/
+    students_names = @registration.students_names
+    @registration.students_names = @registration.students_names.join("\n")
+    students_voice_parts = @registration.students_voice_parts
+    @registration.students_voice_parts = @registration.students_voice_parts.join("\n")
     
     respond_to do |format|
       if @registration.save
         
         @nyyms = []
-        @registration.students_names.split("\n").each do |student_name|
+        students_names.each_index do |i|
           @nyym = Nyym.new
-          @nyym.student_name = student_name
+          @nyym.name = students_names[i]
+          @nyym.voice_part = students_voice_parts[i]
           @nyym.teacher_name = @registration.name
           @nyym.teacher_email = @registration.email
           @nyym.school_name = @registration.school_name
           @nyym.school_address = @registration.school_address
+          logger.info(@nyym)
           @nyym.save
           @nyyms << @nyym
         end
         
         NyymMailer.send_signup_confirmations_for_bulk_signup(@registration)
         
-        format.html { redirect_to @registration, :notice => 'Registration was successfully created.' }
+        format.html { redirect_to '/register', :notice => 'Registration was successfully created.' }
         format.json { render :json => @registration, :status => :created, :location => @registration }
       else
         format.html { render :action => "new" }

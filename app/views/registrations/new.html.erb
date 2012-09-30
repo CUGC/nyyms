@@ -1,4 +1,4 @@
-<p>(Or, you can <%= link_to "register as an independent attendee", independent_registration_path %>)</p>
+<p>Register your students below for NYYMS 2012:<br />(Or, you can <%= link_to "register as an independent attendee", independent_registration_path %>)</p>
 
 <%= form_for(@registration) do |f| %>
   <% if @registration.errors.any? %>
@@ -21,17 +21,42 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :students_names %><br />
-    <%= f.text_field :students_names %>
-  </div>
+  <table id="student_info">
+    <thead>
+      <tr>
+        <th>Student's Name</th>
+        <th>Voice Part</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input name="registration[students_names][]" type="text" value=""></td>
+        <td>
+          <select name="registration[students_voice_parts][]">
+            <option value="">Please select</option>
+            <option value="tenor1">Tenor 1</option>
+            <option value="tenor2">Tenor 2</option>
+            <option value="baritone">Baritone</option>
+            <option value="bass">Bass</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <input type="button" id="add_new_student" class="btn" value="Add Another Student">
   <div class="field">
     <%= f.label :school_name %><br />
     <%= f.text_field :school_name %>
   </div>
   <div class="field">
     <%= f.label :school_address %><br />
-    <%= f.text_field :school_address %>
+    <%= f.text_area :school_address %>
+  </div>
+  <div class="field">
+    The fee for NYYMS is $25.00 per student in order to cover the cost of music and lunch. Check one of the boxes below to mark how you intend to pay your costs.
+    Cornell University Glee Club/Day Hall Mail Room/Ithaca, NY 14853
+    <%= f.radio_button :payment_plan, "teacher_mailing_check" %> I will be mailing a check made out to the Cornell University Glee Club
+    <%= f.radio_button :payment_plan, "students_pay_individually" %> My students will each send their own checks
   </div>
   <div class="actions">
     <%= f.submit "Register", :class => "btn btn-success btn-large btn-block" %>

@@ -33,6 +33,12 @@
     <%= f.label :school_address, "Your Mailing Address" %><br />
     <%= f.text_area :school_address %>
   </div>
+  <div class="field">
+    The fee for NYYMS is $25.00 in order to cover the cost of music and lunch. Check one of the boxes below to mark how you intend to pay your costs.
+    Cornell University Glee Club/Day Hall Mail Room/Ithaca, NY 14853
+    <%= f.radio_button :payment_plan, "mailing_check_for_25" %> I will be mailing a check made out to the Cornell University Glee Club for $25.00
+    <%= f.radio_button :payment_plan, "school_pays" %> My school/organization will be covering my costs.
+  </div>
   <div class="actions">
     <%= f.submit "Register", :class => "btn btn-success btn-large btn-block" %>
   </div>
