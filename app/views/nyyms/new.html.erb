@@ -30,24 +30,8 @@
     <%= f.text_field :phone_number, :placeholder => "Optional" %>
   </div>
   <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age %>
-  </div>
-  <div class="field">
-    <%= f.label :school_name, "School" %><br />
-    <%= f.text_field :school_name %>
-  </div>
-  <div class="field">
-    <%= f.label :school_address, "School Mailing Address" %><br />
+    <%= f.label :school_address, "Your Mailing Address" %><br />
     <%= f.text_area :school_address %>
-  </div>
-  <div class="field">
-    <%= f.label :teacher_name, "Teacher's Name" %><br />
-    <%= f.text_field :teacher_name %>
-  </div>
-  <div class="field">
-    <%= f.label :teacher_email, "Teacher's Email" %><br />
-    <%= f.text_field :teacher_email %>
   </div>
   <div class="actions">
     <%= f.submit "Register", :class => "btn btn-success btn-large btn-block" %>
