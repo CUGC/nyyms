@@ -3,8 +3,6 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  if(/\/register/.test(document.location.pathname))
-    
     tmpl = '<tr><td><input name="registration[students_names][]" type="text" value=""></td>
         <td>
           <select name="registration[students_voice_parts][]">
