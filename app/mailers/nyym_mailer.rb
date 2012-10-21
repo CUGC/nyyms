@@ -30,13 +30,13 @@ class NyymMailer < ActionMailer::Base
   def signup_confirmation_to_attendee(nyym)
     @nyym = nyym
 
-    mail :to => nyym.email, :subject => "Your NYYMS Registration", :reply_to => "nyyms@gleeclub.cornell.edu"
+    mail :to => nyym.email, :cc => @@nyyyms_coordinator_email, :subject => "Your NYYMS Registration", :reply_to => "nyyms@gleeclub.cornell.edu"
   end
   
   def signup_confirmation_to_librarian(nyym)
     @nyym = nyym
 
-    mail :to => @@librarian_email, :subject => "New NYYMS Registration", :reply_to => "nyyms@gleeclub.cornell.edu"
+    mail :to => @@librarian_email, :cc => @@nyyyms_coordinator_email, :subject => "New NYYMS Registration", :reply_to => "nyyms@gleeclub.cornell.edu"
   end
   
   def signup_confirmation_to_nyyms_coordinator(nyym)
@@ -51,13 +51,13 @@ class NyymMailer < ActionMailer::Base
   def signup_confirmation_to_teacher_bulk(registration)
     @registration = registration
 
-    mail :to => registration.email, :subject => "Your Students' NYYMS Registration", :reply_to => @@nyyyms_coordinator_email
+    mail :to => registration.email, :cc => @@nyyyms_coordinator_email, :subject => "Your Students' NYYMS Registration", :reply_to => @@nyyyms_coordinator_email
   end
   
   def signup_confirmation_to_librarian_bulk(registration)
     @registration = registration
 
-    mail :to => @@librarian_email, :subject => "New NYYMS Registration", :reply_to => @@nyyyms_coordinator_email
+    mail :to => @@librarian_email, :cc => @@nyyyms_coordinator_email, :subject => "New NYYMS Registration", :reply_to => @@nyyyms_coordinator_email
   end
   
   def signup_confirmation_to_nyyms_coordinator_bulk(registration)
