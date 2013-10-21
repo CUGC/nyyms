@@ -2,12 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'mysql2'
 gem 'devise', '>= 2.1'
-gem 'thin'
 gem 'cornell_ldap', '>= 1.4.0'
 gem 'cornell_netid', '>= 1.1.0'
 gem 'exception_notification', :require => 'exception_notifier'
@@ -31,19 +27,8 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
   gem "factory_girl_rails" if RUBY_VERSION >= "1.9.2"
   gem "brakeman", "~> 1.7.0"
+  gem 'thin'
 end
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
