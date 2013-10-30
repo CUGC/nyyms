@@ -72,5 +72,5 @@ Nyyms::Application.configure do
   config.middleware.use ExceptionNotifier,
     :email_prefix => "[NYYMS] ",
     :sender_address => %{"Exception Notifier" <no-reply@nyyms.gleeclub.com>},
-    :exception_recipients => %w{webmaster@gleeclub.cornell.edu}
+    :exception_recipients => %w{webmaster@gleeclub.cornell.edu pjm336@cornell.edu}
 end
