@@ -24,7 +24,7 @@ class NyymMailer < ActionMailer::Base
     NyymMailer.signup_confirmation_to_librarian(nyym).deliver
     NyymMailer.signup_confirmation_to_nyyms_coordinator(nyym).deliver
   end
-  
+
   def send_signup_confirmations_for_bulk_signup(registration)
     NyymMailer.set_vars
     NyymMailer.signup_confirmation_to_teacher_bulk(registration).deliver
@@ -38,66 +38,66 @@ class NyymMailer < ActionMailer::Base
   def signup_confirmation_to_attendee(nyym)
     @nyym = nyym
 
-    mail {
+    mail(
       :to => nyym.email,
       :cc => @@nyyyms_coordinator_email,
       :subject => "Your NYYMS Registration",
       :reply_to => @@nyyyms_coordinator_email
-    }
+    )
   end
-  
+
   def signup_confirmation_to_librarian(nyym)
     @nyym = nyym
 
-    mail {
+    mail(
       :to => @@librarian_email,
       :cc => @@nyyyms_coordinator_email,
       :subject => "New NYYMS Registration",
       :reply_to => @@nyyyms_coordinator_email
-    }
+    )
   end
-  
+
   def signup_confirmation_to_nyyms_coordinator(nyym)
     @nyym = nyym
 
-    mail {
+    mail(
       :to => @@nyyyms_coordinator_email,
       :subject => "New NYYMS Registration"
-    }
+    )
   end
-  
+
   # --------
   # Bulk emails
-  
+
   def signup_confirmation_to_teacher_bulk(registration)
     @registration = registration
 
-    mail {
+    mail(
       :to => registration.email,
       :cc => @@nyyyms_coordinator_email,
       :subject => "Your Students' NYYMS Registration",
       :reply_to => @@nyyyms_coordinator_email
-    }
+    )
   end
-  
+
   def signup_confirmation_to_librarian_bulk(registration)
     @registration = registration
 
-    mail {
+    mail(
       :to => @@librarian_email,
       :cc => @@nyyyms_coordinator_email,
       :subject => "New NYYMS Registration",
       :reply_to => @@nyyyms_coordinator_email
-    }
+    )
   end
-  
+
   def signup_confirmation_to_nyyms_coordinator_bulk(registration)
     @registration = registration
 
-    mail {
+    mail(
       :to => @@nyyyms_coordinator_email,
       :subject => "New NYYMS Registration"
-    }
+    )
   end
-  
+
 end
