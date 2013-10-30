@@ -2,7 +2,7 @@ Dear <%= @registration.name %>,
 
 Your students have been successfully registered for New York Young Men Sing with the Cornell University Glee Club. You will receive a package in the mail soon with music for the following students:
 
-<%= @registration.students_names %>
+<%= @registration.students_names.split("\n").join("\n\n") %>
 
 The guest conductor, Prof. Jerry Blackstone, will assume that all participants know the music when they arrive on Saturday, so that he can spend rehearsal time fine-tuning pieces for performance, rather than going over notes.  Learning resources, such as MP3 files, will be available soon at http://nyyms.gleeclub.com/mp3s.
 
