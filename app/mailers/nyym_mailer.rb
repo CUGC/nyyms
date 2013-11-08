@@ -25,11 +25,11 @@ class NyymMailer < ActionMailer::Base
     NyymMailer.signup_confirmation_to_nyyms_coordinator(nyym).deliver
   end
 
-  def send_signup_confirmations_for_bulk_signup(registration)
+  def send_signup_confirmations_for_bulk_signup(registration, young_men)
     NyymMailer.set_vars
-    NyymMailer.signup_confirmation_to_teacher_bulk(registration).deliver
-    NyymMailer.signup_confirmation_to_librarian_bulk(registration).deliver
-    NyymMailer.signup_confirmation_to_nyyms_coordinator_bulk(registration).deliver
+    NyymMailer.signup_confirmation_to_teacher_bulk(registration, young_men).deliver
+    NyymMailer.signup_confirmation_to_librarian_bulk(registration, young_men).deliver
+    NyymMailer.signup_confirmation_to_nyyms_coordinator_bulk(registration, young_men).deliver
   end
 
   # --------
@@ -69,8 +69,9 @@ class NyymMailer < ActionMailer::Base
   # --------
   # Bulk emails
 
-  def signup_confirmation_to_teacher_bulk(registration)
+  def signup_confirmation_to_teacher_bulk(registration, young_men)
     @registration = registration
+    @young_men    = young_men
 
     mail(
       :to => registration.email,
@@ -80,8 +81,9 @@ class NyymMailer < ActionMailer::Base
     )
   end
 
-  def signup_confirmation_to_librarian_bulk(registration)
+  def signup_confirmation_to_librarian_bulk(registration, young_men)
     @registration = registration
+    @young_men    = young_men
 
     mail(
       :to => @@librarian_email,
@@ -91,8 +93,9 @@ class NyymMailer < ActionMailer::Base
     )
   end
 
-  def signup_confirmation_to_nyyms_coordinator_bulk(registration)
+  def signup_confirmation_to_nyyms_coordinator_bulk(registration, young_men)
     @registration = registration
+    @young_men    = young_men
 
     mail(
       :to => @@nyyyms_coordinator_email,

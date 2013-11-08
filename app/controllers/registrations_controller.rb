@@ -45,25 +45,28 @@ class RegistrationsController < ApplicationController
     @registration.students_names = @registration.students_names.join("\n")
     students_voice_parts = Marshal.load(Marshal.dump(@registration.students_voice_parts))
     @registration.students_voice_parts = @registration.students_voice_parts.join("\n")
-    
+
     respond_to do |format|
       if @registration.save
-        
+
         @nyyms = []
         students_names.each_index do |i|
           @nyym = Nyym.new
-          @nyym.name = students_names[i]
-          @nyym.voice_part = students_voice_parts[i]
-          @nyym.teacher_name = @registration.name
-          @nyym.teacher_email = @registration.email
-          @nyym.school_name = @registration.school_name
+          @nyym.name           = students_names[i]
+          @nyym.voice_part     = students_voice_parts[i]
+          @nyym.email          = "none@example.com"
+          @nyym.teacher_name   = @registration.name
+          @nyym.teacher_email  = @registration.email
+          @nyym.school_name    = @registration.school_name
           @nyym.school_address = @registration.school_address
-          @nyym.save
+          @nyym.payment_plan   = @registration.payment_plan
+          p @nyym
+          @nyym.save!
           @nyyms << @nyym
         end
-        
-        NyymMailer.send_signup_confirmations_for_bulk_signup(@registration)
-        
+
+        NyymMailer.send_signup_confirmations_for_bulk_signup(@registration, @nyyms)
+
         format.html { redirect_to '/register', :notice => 'Registration was successfully created.' }
         format.json { render :json => @registration, :status => :created, :location => @registration }
       else
