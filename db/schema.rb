@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120930173730) do
+ActiveRecord::Schema.define(:version => 20131108043805) do
 
   create_table "nyyms", :force => true do |t|
     t.string   "name",                                   :null => false
     t.string   "email",                                  :null => false
     t.integer  "age",                                    :null => false
-    t.string   "school_name",                            :null => false
-    t.string   "school_address",                         :null => false
-    t.string   "teacher_name",                           :null => false
-    t.string   "teacher_email",                          :null => false
+    t.string   "school_name"
+    t.text     "school_address"
+    t.string   "teacher_name"
+    t.string   "teacher_email"
     t.string   "voice_part",                             :null => false
     t.string   "phone_number"
     t.boolean  "has_paid",            :default => false, :null => false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20120930173730) do
     t.string   "email",                :null => false
     t.text     "students_names",       :null => false
     t.string   "school_name",          :null => false
-    t.string   "school_address",       :null => false
+    t.text     "school_address",       :null => false
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.text     "students_voice_parts", :null => false
