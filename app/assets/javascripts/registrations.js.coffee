@@ -7,12 +7,12 @@ $ ->
         <td>
           <select name="registration[students_voice_parts][]">
             <option value="">Please select</option>
-            <option value="tenor1">Tenor 1</option>
-            <option value="tenor2">Tenor 2</option>
-            <option value="baritone">Baritone</option>
-            <option value="bass">Bass</option>
+            <option value="Tenor 1">Tenor 1</option>
+            <option value="Tenor 2">Tenor 2</option>
+            <option value="Baritone">Baritone</option>
+            <option value="Bass">Bass</option>
           </select>
         </td></tr>'
-    
+
     $('#add_new_student').on 'click', ->
       $('#student_info tbody').append(tmpl)
