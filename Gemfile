@@ -30,6 +30,7 @@ group :test, :development do
   gem "factory_girl_rails" if RUBY_VERSION >= "1.9.2"
   gem "brakeman", "~> 1.7.0"
   gem 'thin'
+  gem "letter_opener"
 end
 
 # To use ActiveModel has_secure_password
