@@ -12,7 +12,6 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
-/tmp
 
 config/database.yml
 config/gmail_smtp_webmaster.yml
