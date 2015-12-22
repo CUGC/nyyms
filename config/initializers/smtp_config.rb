@@ -1,7 +1,7 @@
 Nyyms::Application.config.action_mailer.delivery_method = :smtp
 
 if ENV['SMTP_HOST']
-  config.action_mailer.smtp_settings = {
+  Nyyms::Application.config.action_mailer.smtp_settings = {
     :address              => ENV.fetch('SMTP_HOST'),
     :port                 => ENV.fetch('SMTP_PORT', 25).to_i,
     :domain               => ENV.fetch('SMTP_DOMAIN'),
@@ -12,6 +12,11 @@ if ENV['SMTP_HOST']
   }
 else
   require 'yaml'
-  stmp_settings_file = File.expand_path('gmail_smtp_webmaster.yml', File.dirname(__FILE__))
-  config.action_mailer.smtp_settings = YAML.load(File.open(stmp_settings_file, 'rb'))
+  stmp_settings_file = File.expand_path(
+    'gmail_smtp_webmaster.yml',
+    File.dirname(__FILE__)
+  )
+  Nyyms::Application.config.action_mailer.smtp_settings = YAML.load(
+    File.open(stmp_settings_file, 'rb')
+  )
 end
