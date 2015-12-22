@@ -5,5 +5,7 @@ Nyyms::Application.routes.draw do
   match 'nyyms' => 'nyyms#create', :via => [:post]
   match 'mp3s' => 'nyyms#mp3s', :via => [:get]
 
+  match 'registrations' => 'registrations#index', :via => [:get]
+
   root :to => 'registrations#new'
 end

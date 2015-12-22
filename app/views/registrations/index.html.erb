@@ -26,6 +26,8 @@
 <% end %>
 </table>
 
-<br />
+<% if @registrations.empty? %>
+  <p>No registrations yet.</p>
+<% end %>
 
-<%= link_to 'New Registration', new_registration_path %>
+<br />

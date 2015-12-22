@@ -4,7 +4,6 @@ gem 'rails', '3.2.15'
 gem 'rake', '~> 10.1'
 gem 'thin', '~> 1.6'
 
-gem 'mysql2'
 gem 'devise', '>= 2.1'
 gem 'cornell_ldap', '>= 1.4.0'
 gem 'cornell_netid', '>= 1.1.0'
@@ -32,6 +31,7 @@ group :test, :development do
   gem "factory_girl_rails" if RUBY_VERSION >= "1.9.2"
   gem "brakeman", "~> 1.7.0"
   gem "letter_opener"
+  gem "dotenv-rails"
 end
 
 # To use ActiveModel has_secure_password
