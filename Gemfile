@@ -10,6 +10,7 @@ gem 'cornell_ldap', '>= 1.4.0'
 gem 'cornell_netid', '>= 1.1.0'
 gem 'exception_notification', '~> 3.0', :require => 'exception_notifier'
 gem 'sendgrid', '~> 1.2.0'
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
