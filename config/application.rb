@@ -58,10 +58,5 @@ module Nyyms
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-    
-    config.action_mailer.delivery_method = :smtp
-    require 'yaml'
-    stmp_settings_file = File.join([File.expand_path('gmail_smtp_webmaster.yml', File.dirname(__FILE__))])
-    config.action_mailer.smtp_settings = YAML.load(File.open(stmp_settings_file, 'rb'))
   end
 end
