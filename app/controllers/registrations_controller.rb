@@ -48,9 +48,9 @@ class RegistrationsController < ApplicationController
   def create
     @registration = Registration.new(params[:registration])
     students_names = Marshal.load(Marshal.dump(@registration.students_names))
-    @registration.students_names = @registration.students_names.join("\n")
+    @registration.students_names = Array(@registration.students_names).join("\n")
     students_voice_parts = Marshal.load(Marshal.dump(@registration.students_voice_parts))
-    @registration.students_voice_parts = @registration.students_voice_parts.join("\n")
+    @registration.students_voice_parts = Array(@registration.students_voice_parts).join("\n")
 
     respond_to do |format|
       if @registration.save
