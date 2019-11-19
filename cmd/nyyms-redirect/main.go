@@ -11,7 +11,7 @@ func main() {
 	flag.StringVar(&bind, "http", ":8080", "HTTP host/port to bind to")
 	flag.Parse()
 
-	http.Handle("/", http.RedirectHandler("https://gleeclub.com/nyyms", http.StatusMovedPermanently))
+	http.Handle("/", http.RedirectHandler("https://www.gleeclub.com/nyyms", http.StatusMovedPermanently))
 
 	log.Printf("Listening on %q...", bind)
 	if err := http.ListenAndServe(bind, nil); err != nil {
