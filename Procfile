@@ -1,1 +1,1 @@
-web: bin/nyyms-redirect
+web: bin/nyyms-redirect -http=:$PORT
