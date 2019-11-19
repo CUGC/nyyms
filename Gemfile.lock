@@ -109,7 +109,7 @@ GEM
     multi_json (1.14.1)
     net-ldap (0.16.2)
     orm_adapter (0.4.0)
-    pg (0.18.4)
+    pg (1.1.4)
     polyglot (0.3.3)
     rack (1.4.7)
     rack-cache (1.2)
